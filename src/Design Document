@@ -1,0 +1,51 @@
+EquationRunner.java
+    1. Welcome the user and prompt them to input their first pair of coordinates, specifying the format (x,y) where x and y are both integers
+    2. Scan the next line as a String with scanner and get both coordinates store as (x1, y1)
+    3. Ask for the second pair of coordinates store as (x2, y2)
+    3. Create a LinearEquation object with the coordinates
+    4. Using the toString() method, print out the:
+            two original points; (x1, y1) and (x2, y2)
+            equation of the line in y = mx + b format (m as a fraction if necessary, b as a double)
+            slope of the line
+            y-intercept of the line
+            distance between the two points (Nearest hundredths)
+    5. Prompt the user to input any x value as a double
+    6. Scan the next line using next.double
+    7. print the y coordinate for the x value scanned in line 6
+
+LinearEquation Class
+
+Instance Variables:
+    private int x - represents the x coordinate
+    private int y - represents the y coordinate
+    private int slope - represents the slope of the equation
+
+
+Constructor
+    public LinearEquation(double x)
+
+Methods
+
+    public slope(int x1, int x2, int y1, int y2)
+        create equation to find slope using rise over run
+        store slope as variable double
+
+    public yIntercept(int y, int x, double slope)
+        calculate y intercept by substituting and solving for b store as double
+
+    public createEquation(double slope, double yIntercept)
+        return String creating y = mx + b format equation
+
+    public distance(int x1, int x2, int y1, int y2)
+        calculate the distance between the two points using the distance formula store as double
+
+    public thirdPoint(double x)
+        takes user input for another point on the line and returns the y coordinate for the point as (x, y)
+
+    public toString()
+        prints:
+        two original points; (x1, y1) and (x2, y2)
+        equation of the line in y = mx + b format (m as a fraction if necessary, b as a double)
+        slope of the line
+        y-intercept of the line
+        distance between the two points (Nearest hundredths)
