@@ -22,24 +22,32 @@ Instance Variables:
 
 
 Constructor
-    public LinearEquation(double x)
+    public LinearEquation(int x1, int x2, int y1, int y2)
 
 Methods
 
-    public slope(int x1, int x2, int y1, int y2)
+    public slope()
         create equation to find slope using rise over run
-        store slope as variable double
+        store slope as variable String as a fraction
+            if the fraction is a proper fraction make the fraction reduce to whole numbers
+            if the fraction is negative make sure only the left most number is negative
+            if both the numerator and denominator is negative, cancel out the negative signs
+            1 should not be included in slope, -1 should be displayed as -
+            if slope and y-int are both 0, print y = 0
 
-    public yIntercept(int y, int x, double slope)
+
+    public yIntercept()
         calculate y intercept by substituting and solving for b store as double
+        if the y-int is 0, do not display y-int
+        if the y-int is negative print as subtraction instead of + -
 
-    public createEquation(double slope, double yIntercept)
+    public createEquation()
         return String creating y = mx + b format equation
 
-    public distance(int x1, int x2, int y1, int y2)
+    public distance()
         calculate the distance between the two points using the distance formula store as double
 
-    public thirdPoint(double x)
+    public thirdPoint()
         takes user input for another point on the line and returns the y coordinate for the point as (x, y)
 
     public toString()
