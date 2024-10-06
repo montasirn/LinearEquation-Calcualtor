@@ -1,24 +1,30 @@
 EquationRunner.java
     1. Welcome the user and prompt them to input their first pair of coordinates, specifying the format (x,y) where x and y are both integers
-    2. Scan the next line as a String with scanner and get both coordinates store as (x1, y1)
-    3. Ask for the second pair of coordinates store as (x2, y2)
-    3. Create a LinearEquation object with the coordinates
-    4. Using the toString() method, print out the:
+    2. Scan the next line as a String with scanner and store the pair as a String
+    3. Ask for the second pair of coordinates store as String
+    4. Use String method of substring as well as indexOf to get the individual x and y coordinates out of the string
+    5. Convert the Strings stored from step 5 into integers
+    6. Create a LinearEquation object with the coordinates
+    7. Using the toString() method, print out the:
             two original points; (x1, y1) and (x2, y2)
             equation of the line in y = mx + b format (m as a fraction if necessary, b as a double)
             slope of the line
             y-intercept of the line
             distance between the two points (Nearest hundredths)
-    5. Prompt the user to input any x value as a double
-    6. Scan the next line using next.double
-    7. print the y coordinate for the x value scanned in line 6
+    8. Prompt the user to input any x value as a double
+    9. Scan the next line using next.double
+    10. print the x and y coordinates for the x value scanned in line 6
 
 LinearEquation Class
 
 Instance Variables:
-    private int x - represents the x coordinate
-    private int y - represents the y coordinate
-    private int slope - represents the slope of the equation
+    private int x1 - represents the first pair x coordinate
+    private int y1 - represents the first pair y coordinate
+    private int x2 - represents the second pair x coordinate
+    private int y2 - represents the second pair y coordinate
+    private double slope - represents the slope of the equation
+    private double yIntercept - represents the y intercept of the equation
+    private String slopeFraction - represents how the slope will be displayed to the user as a fraction
 
 
 Constructor
@@ -26,7 +32,7 @@ Constructor
 
 Methods
 
-    public slope()
+    public calculateSlopeAndYIntercept()
         create equation to find slope using rise over run
         store slope as variable String as a fraction
             if the fraction is a proper fraction make the fraction reduce to whole numbers
@@ -35,14 +41,14 @@ Methods
             1 should not be included in slope, -1 should be displayed as -
             if slope and y-int are both 0, print y = 0
 
-
-    public yIntercept()
         calculate y intercept by substituting and solving for b store as double
-        if the y-int is 0, do not display y-int
-        if the y-int is negative print as subtraction instead of + -
 
-    public createEquation()
+    public equation()
         return String creating y = mx + b format equation
+            if slope is 0, then it will return y = b
+            if y intercept is 0 then it will not be displayed
+            if y intercept is greater than 0 then the sign is +
+            if y intercept is less than 0 than the sign is -
 
     public distance()
         calculate the distance between the two points using the distance formula store as double
