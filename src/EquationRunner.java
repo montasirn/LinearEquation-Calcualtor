@@ -20,18 +20,18 @@ public class EquationRunner {
 
 
         //convert the numbers from Strings to integers
-        int xPair1conv = Integer.parseInt(xPair1); //get the first x coordinate
-        int xPair2conv = Integer.parseInt(xPair2); //get the second x coordinate
-        int yPair1conv = Integer.parseInt(yPair1); //get the first y coordinate
-        int yPair2conv = Integer.parseInt(yPair2); //get the second y coordinate
+        int xPair1Conv = Integer.parseInt(xPair1); //get the first x coordinate as int
+        int xPair2Conv = Integer.parseInt(xPair2); //get the second x coordinate as int
+        int yPair1Conv = Integer.parseInt(yPair1); //get the first y coordinate as int
+        int yPair2Conv = Integer.parseInt(yPair2); //get the second y coordinate as int
 
-        LinearEquation test = new LinearEquation(xPair1conv,yPair1conv,xPair2conv,yPair2conv);
+        LinearEquation test = new LinearEquation(xPair1Conv, yPair1Conv, xPair2Conv, yPair2Conv);
         System.out.println(test.toString());
 
         //prompt user for a third point
-        System.out.println("Enter a x value to see the y value at that point");
+        System.out.println("Enter a x value to see the y value at that point:");
         int thirdPoint = s.nextInt();
-        LinearEquation thirdPointY = new LinearEquation(xPair1conv,yPair1conv,xPair2conv,yPair2conv);
-        thirdPointY.thirdPointLQ(thirdPoint);
+        LinearEquation thirdPointY = new LinearEquation(xPair1Conv, yPair1Conv, xPair2Conv, yPair2Conv);
+        thirdPointY.thirdPointCalc(thirdPoint);
     }
 }

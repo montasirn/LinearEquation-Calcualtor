@@ -1,4 +1,7 @@
+import java.text.DecimalFormat;
+
 public class LinearEquation {
+
     private int x1;
     private int y1;
     private int x2;
@@ -6,6 +9,7 @@ public class LinearEquation {
     private double slope;
     private double yIntercept;
     private String slopeFraction;
+    DecimalFormat df = new DecimalFormat("0.##"); //makes all doubles only return up to 2 decimal places
 
     // Constructor for the class
     public LinearEquation(int x1, int y1, int x2, int y2) {
@@ -16,12 +20,12 @@ public class LinearEquation {
         calculateSlopeAndYIntercept();
     }
 
-    public void thirdPointLQ(int a) {
+    public void thirdPointCalc(int a) {
         // Calculate the y value using the formula y = mx + b
         double y = slope * a + yIntercept;
 
         // Print the coordinate pair
-        String s = "(" + a + ", " + y + ")";
+        String s = "(" + a + ", " + df.format(y) + ")";
         System.out.println(s);
     }
 
@@ -84,14 +88,13 @@ public class LinearEquation {
     public String equation() {
         // Special case when slope is zero
         if (slope == 0) {
-            return "y = " + yIntercept; // Just return y = b
+            return "y = " + df.format(yIntercept); // Just return y = b
         }
 
         // General case when slope is non-zero
-        String slopeStr = slopeString();
-        String yInterceptStr = yIntercept == 0 ? "" : (yIntercept > 0 ? " + " + yIntercept : " - " + Math.abs(yIntercept)); // Makes sure the right symbol is used when the y-int is negative; so it doesn't return as + -
+        String yInterceptStr = yIntercept == 0 ? "" : (yIntercept > 0 ? " + " + df.format(yIntercept) : " - " + df.format(Math.abs(yIntercept))); // Makes sure the right symbol is used when the y-int is negative; so it doesn't return as + -
 
-        return "y = " + slopeStr + "x" + yInterceptStr;
+        return "y = " + slopeString() + "x" + yInterceptStr;
     }
 
     // Method to calculate the distance between two points
@@ -106,7 +109,7 @@ public class LinearEquation {
                 "Second pair: (" + x2 + ", " + y2 + ") \n" +
                 "Equation: " + equation() + "\n" +
                 "Slope: " + slopeString() + "\n" +
-                "Y-Intercept: " + yIntercept + "\n" +
-                "Distance between points: " + distance() + "\n";
+                "Y-Intercept: " + df.format(yIntercept) + "\n" +
+                "Distance between points: " + df.format(distance()) + "\n";
     }
 }
